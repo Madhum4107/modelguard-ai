@@ -1,0 +1,8 @@
+[project]
+name = "modelguard-ai-ml-observability-lab"
+version = "1.0.0"
+description = "Local evidence-driven ML observability and model-risk decision support"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
