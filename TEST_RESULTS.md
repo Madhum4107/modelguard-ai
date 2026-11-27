@@ -2,7 +2,7 @@
 
 ## Automated regression suite
 
-**21/21 tests passed** in the release verification run.
+**22/22 tests passed** in the release verification run.
 
 Coverage includes reproducible demo data; drift response to changed data; CSV parsing and validation; API health/version, demo, upload, preview, readiness and reports; what-if/recovery flows; upload size limits; duplicate headers; unexpected-error redaction; identifier exclusion; monitoring coverage; drift direction; one-class target handling; and all-null reference feature handling.
 
