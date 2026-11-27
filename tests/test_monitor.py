@@ -168,3 +168,20 @@ def test_unexpected_analysis_error_does_not_leak_internals(monkeypatch):
     assert response.status_code == 500
     assert "private filesystem path" not in response.text
     assert "Analysis failed unexpectedly" in response.json()["detail"]
+
+
+def test_refresh_recomputes_active_dataset(monkeypatch):
+    client.post("/api/demo")
+    original = main_module.analyze
+    calls = []
+
+    def tracked(ref, cur, source):
+        calls.append((len(ref), len(cur), source))
+        return original(ref, cur, source)
+
+    monkeypatch.setattr(main_module, "analyze", tracked)
+    response = client.get("/api/scan")
+    assert response.status_code == 200
+    assert len(calls) == 1
+    assert calls[0][2] == "built-in demo dataset"
+    assert response.json()["source"] == "built-in demo dataset"
