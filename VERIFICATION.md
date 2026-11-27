@@ -2,7 +2,7 @@
 
 ## Automated checks run for this package
 
-- `python -m pytest -q`: **21 passed**.
+- `python -m pytest -q`: **22 passed**.
 - `python -m compileall -q backend core tests`: passed.
 - `node --check frontend/app.js`: passed.
 - API tests cover health/version, demo loading, upload/analysis, preview, readiness, HTML/JSON reports, what-if actions, recovery validation, invalid file types, empty/malformed CSVs, no shared schema, per-file upload limits, duplicate headers, internal-error redaction, ID exclusion, coverage, drift direction, one-class target handling, and all-null reference features.
