@@ -61,7 +61,10 @@ def health():
 
 @app.get("/api/scan")
 def get_scan():
-    return _ensure_report()
+    if SESSION["reference"] is None or SESSION["current"] is None:
+        return _set_demo()
+    SESSION["report"] = analyze(SESSION["reference"], SESSION["current"], SESSION["source"])
+    return SESSION["report"]
 
 @app.post("/api/demo")
 def demo():
