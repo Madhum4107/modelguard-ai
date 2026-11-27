@@ -46,7 +46,7 @@ Click **Load demo** to load the included reproducible reference/current example.
 2. Choose a later **Current CSV**.
 3. Click **Analyze datasets**.
 4. Review readiness, quality checks, drift, model metrics, recommendations, and simulations.
-5. Download the HTML or JSON report if you need to save the result.
+5. Use **Refresh** to re-run analysis against the active datasets after any changes.\n6. Download the HTML or JSON report if you need to save the result.
 
 Each file must be a valid UTF-8 CSV and **10 MiB or smaller**. Use time-separated batches where possible. A shared binary target named `churn`, `target`, `label`, `y`, `outcome`, `default`, or `fraud` enables the model-metric panels when both batches contain both classes. Numeric ID-like fields are excluded from monitoring features.
 
